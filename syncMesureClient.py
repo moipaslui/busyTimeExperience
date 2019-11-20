@@ -1,12 +1,15 @@
+#!/usr/bin/env python3
+
 import socket
 
-HOST = "127.0.0.1"
-PORT = 4545
+HOST1 = "192.168.1.126"
+HOST2 = ""
+HOST3 = ""
+HOST4 = ""
+PORT = 65432
 
-c = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-c.connect((HOST, PORT))
-c.send("Bonjoure\n")
-from_server = c.recv(4096)
-
-c.close()
-print(from_server)
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s :
+    s.connect((HOST1, PORT))
+    s.connect((HOST2, PORT))
+    s.connect((HOST3, PORT))
+    s.connect((HOST4, PORT))
