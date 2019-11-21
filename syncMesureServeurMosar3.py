@@ -5,10 +5,10 @@ import socket
 import subprocess as sp
 import time
 
-HOST = '192.168.1.120'
+HOST = "192.168.1.120"
 PORT = 65432        # Port to listen on (non-privileged ports are > 1023)
 INTERFACE = "wlan0"
-TEMPSMESURE = 10
+TEMPSMESURE = 20
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 	s.bind((HOST, PORT))
