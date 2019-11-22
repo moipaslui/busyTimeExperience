@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 
 import socket
+import subprocess as sp
 
-HOST1 = "192.168.1.126"
-HOST2 = ""
-HOST3 = ""
-HOST4 = ""
+MOSAR2 = "192.168.1.207"
+MOSAR3 = "192.168.1.120"
+MOSAR4 = ""
+MOSAR8 = ""
 PORT = 65432
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s :
-    s.connect((HOST1, PORT))
-    s.connect((HOST2, PORT))
-    s.connect((HOST3, PORT))
-    s.connect((HOST4, PORT))
+    #s.connect((MOSAR2, PORT))
+    s.connect((MOSAR3, PORT))
+    #s.connect((MOSAR4, PORT))
+    #s.connect((MOSAR8, PORT))
+sp.run(["iperf3 -c 192.168.1.1 -t 40"], shell = True)
