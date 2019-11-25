@@ -13,7 +13,7 @@ def calculeBusyTime(nomInterface, tempsMesure) :
 	nombres = re.findall(r"\d+", resultatDump) #regex qui récupère tous les nombres du résultat du survey dump
 
 	tempsActif = int(nombres[len(nombresInterface) + 1]) #récupération du temps actif et busy dans le tableau de tous les nombres du survey dump
-	tempsBusy = int(nombres[len(nombresInterface) + 2]) 
+	tempsBusy = int(nombres[len(nombresInterface) + 2])
 
 	pourcentageBusy = ((tempsBusy/tempsActif)*100) #calcul du pourcentage de busy time
 

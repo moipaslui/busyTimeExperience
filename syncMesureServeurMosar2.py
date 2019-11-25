@@ -6,8 +6,8 @@ import subprocess as sp
 import time
 import datetime
 
-HOST = "192.168.1.120"
-PORT = 65433        # Port to listen on (non-privileged ports are > 1023)
+HOST = "192.168.1.207"
+PORT = 65432        # Port to listen on (non-privileged ports are > 1023)
 INTERFACE = "wlan0"
 TEMPSMESURE = 20
 
@@ -27,8 +27,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 			busyTimeTotal = calculeBusyTime(INTERFACE, TEMPSMESURE)
 			time.sleep(20) #on sleep suffisamment longtemps pour attendre la fin de l'iperf
 			busyTimeAmbiant = calculeBusyTime(INTERFACE, TEMPSMESURE)
-			debitIPerf = recv(2048)
-			fichierRecap = open(str(datetime.day) + "/" + str(datetime.month) + "/" + str(datetime.year) + "-Mosar2-" + debitIPerf, "a")
-			fichierRecap.write(busyTimeTotal + "\n")
-			fichierRecap.write(busyTimeAmbiant + "\n")
+			fichierRecap = open(str(datetime.date.today().day) + "-" + str(datetime.date.today().month) + "-" + str(datetime.date.today().year) + "_Mosar2.txt", "a")
+			fichierRecap.write(str(busyTimeTotal) + "\n")
+			fichierRecap.write(str(busyTimeAmbiant) + "\n")
+			fichierRecap.close()
 
