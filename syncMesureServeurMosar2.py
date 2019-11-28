@@ -34,8 +34,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 					print("debutAmbiant")
 					busyTimeAmbiant = calculeBusyTime(INTERFACE, TEMPSMESURE)
 					fichierRecap = open(str(datetime.date.today().day) + "-" + str(datetime.date.today().month) + "-" + str(datetime.date.today().year) + "_Mosar2.txt", "a")
-					fichierRecap.write(str(busyTimeTotal) + "\n")
-					fichierRecap.write(str(busyTimeAmbiant) + "\n")
+					fichierRecap.write(str(busyTimeTotal) + " " + str(busyTimeAmbiant) + "\n")
 					i+=1
 			fichierRecap.close()
 			i = 0
