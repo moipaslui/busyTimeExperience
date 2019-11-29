@@ -9,8 +9,8 @@ import sys
 
 MOSAR2 = "192.168.1.207"
 MOSAR3 = "192.168.1.120"
-MOSAR4 = ""
-MOSAR8 = ""
+MOSAR4 = "192.168.1.178"
+MOSAR8 = "192.168.1.78"
 PORT = 65432
 if(not sys.argv[1]) :
     debitIPerf = "10M"
