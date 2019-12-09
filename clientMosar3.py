@@ -12,8 +12,8 @@ MOSAR3 = "192.168.1.120"
 MOSAR4 = "192.168.1.178"
 MOSAR8 = "192.168.1.78"
 PORT = 65432
-if(not sys.argv[1]) :
-    debitIPerf = "10M"
+if(len(sys.argv) == 1) :
+    debitIPerf = "100M"
 else :
     debitIPerf = sys.argv[1]
 nombreMesure = 5
